@@ -37,6 +37,5 @@ class Connexion:
     def get_dons(cls):
         cls.open_connexion()
         dons = list(cls.collection.find({}, {'_id': 0, 'prenom': 1, 'nom': 1, 'montant': 1, 'date': 1}).sort('date', -1).limit(10))
-        print(dons)
         cls.close_connexion()
         return dons

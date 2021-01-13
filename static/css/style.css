@@ -31,9 +31,23 @@ h1 {
 
 .background {
     padding: 10px;
-    width: 75%;
+    width: 80%;
 }
 
 .image {
     width: 15em;
+}
+
+.paragraph {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.conditions {
+    white-space: pre-line;
+    text-align: justify;
+}
+
+.lien {
+    color:darkslateblue;
 }

@@ -11,31 +11,20 @@ def index():
 @app.route("/don", methods=('GET', 'POST'))
 def don():
     if request.method == 'POST':
-            prenom = request.form['prenom']
-            nom = request.form['nom']
-            email = request.form['email']
-            telephone = request.form['telephone']
-            montant = request.form['montant']
-
-            if not prenom:
-                flash('Veuillez entrer votre prénom!')
-            elif not nom:
-                flash('Veuillez entrer votre nom!')
-            elif not email:
-                flash('Veuillez entrer votre email!')
-            elif not telephone:
-                flash('Veuillez entrer votre téléphone!')
-            elif not montant:
-                flash('Veuillez entrer le montant de votre don!')
-            else:
-                Connexion.insert(prenom, nom, email, telephone, montant)
-                return redirect(url_for('index'))
+        prenom = request.form['prenom']
+        nom = request.form['nom']
+        email = request.form['email']
+        telephone = request.form['telephone']
+        montant = request.form['montant']
+        Connexion.insert(prenom, nom, email, telephone, montant)
+        return redirect(url_for('index'))
+    
     return render_template('don.html')
 
 @app.route("/donateurs")
 def donateurs():
-    posts = Connexion.get_dons()
-    return render_template('donateurs.html', posts=posts)
+    dons = Connexion.get_dons()
+    return render_template('donateurs.html', dons=dons)
 
 @app.route("/admin", methods=('GET', 'POST'))
 def admin():
@@ -45,6 +34,11 @@ def admin():
         if user == 'admin' and password == 'admin':
             return render_template('admin.html')
     return render_template('login.html')
+
+@app.route("/conditions")
+def conditions():
+    return render_template('conditions.html')
+
 
 if __name__ == '__main__':
     app.run(port=8000, debug=True)

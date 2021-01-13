@@ -10,36 +10,36 @@
         <div class="form-group col-md-6">
             <input type="text" name="nom"
                     placeholder="Nom" class="form-control"
-                    value="{{ request.form['nom'] }}">
+                    value="{{ request.form['nom'] }}" required>
         </div>
         <div class="form-group col-md-6">
         <input type="text" name="prenom"
                placeholder="Prénom" class="form-control"
-               value="{{ request.form['prenom'] }}">
+               value="{{ request.form['prenom'] }}" required>
         </div>
     </div>
     <div class="form-row">
         <div class="form-group col-md-6">
             <input type="email" name="email"
                     placeholder="Email" class="form-control"
-                    value="{{ request.form['email'] }}">
+                    value="{{ request.form['email'] }}" required>
         </div>
         <div class="form-group col-md-6">
         <input type="tel" name="telephone"
                placeholder="Téléphone" class="form-control"
-               value="{{ request.form['telephone'] }}">
+               value="{{ request.form['telephone'] }}" required>
         </div>
     </div>
     <div class="form-row">
         <div class="form-group col-md-6">
             <input type="number" name="montant"
-                    placeholder="Montant" class="form-control"
-                    value="{{ request.form['montant'] }}">
+                    placeholder="Montant (€)" class="form-control"
+                    value="{{ request.form['montant'] }}" required>
         </div>
     </div>
     <div class="form-check mb-3">
         <input type="checkbox" class="form-check-input" id="checkbox" required>
-        <label class="form-check-label" for="checkbox">J'ai pris conaissance des conditions générales</label>
+        <label class="form-check-label" for="checkbox">J'ai pris conaissance des <a class="lien" href="{{url_for('conditions')}}">conditions générales</a></label>
       </div>
       <button type="submit" class="btn btn-dark">Valider</button>
 </form>
