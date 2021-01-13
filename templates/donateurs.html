@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+ {% block title %} Envol Vert -  Derniers dons {% endblock %}
+
+ {% block content %}
+    <h1>Derniers donateurs</h1>
+    {% for post in posts %}
+
+    <h2>{{ post['prenom'] }} {{ post['nom'] }}</h2>
+
+    <span class="badge badge-dark donateurs montant">{{ post['montant'] }}</span>
+    <span class="badge badge-dark donateurs">{{ post['date'] }}</span>
+    <hr>
+    {% endfor %}
+{% endblock %}

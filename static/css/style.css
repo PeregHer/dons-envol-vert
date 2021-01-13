@@ -1,0 +1,39 @@
+body {
+    background-color: #4BA04A;
+}
+
+h1 {
+    font-size: 50px;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+}
+
+.donateurs {
+    font-size: 1em;
+    margin-right: 1em;
+}
+
+.montant {
+    min-width: 3em;
+}
+
+.logo {
+    width: 2em;
+}
+
+.text {
+    font-size: 1.2em;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.background {
+    padding: 10px;
+    width: 75%;
+}
+
+.image {
+    width: 15em;
+}
