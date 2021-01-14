@@ -39,3 +39,10 @@ class Connexion:
         dons = list(cls.collection.find({}, {'_id': 0, 'prenom': 1, 'nom': 1, 'montant': 1, 'date': 1}).sort('date', -1).limit(10))
         cls.close_connexion()
         return dons
+
+    @classmethod
+    def get_sum(cls):
+        cls.open_connexion()
+        compte = list(cls.collection.aggregate([{ "$group": { "_id" : "null", "sum" : { "$sum": "$montant" }}}]))
+        cls.close_connexion()
+        return compte[0]['sum']

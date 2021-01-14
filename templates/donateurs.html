@@ -8,7 +8,7 @@
 
     <h2>{{ don['prenom'] }} {{ don['nom'] }}</h2>
 
-    <span class="badge badge-dark donateurs montant">{{ don['montant'] }}</span>
+    <span class="badge badge-dark donateurs montant">{{ don['montant'] }} {{ '€' }}</span>
     <span class="badge badge-dark donateurs">{{ don['date'] }}</span>
     <hr>
     {% endfor %}

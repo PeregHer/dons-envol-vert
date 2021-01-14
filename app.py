@@ -1,12 +1,12 @@
-from flask import Flask, render_template, request, redirect, url_for, flash
+from flask import Flask, render_template, request, redirect, url_for
 from atlas import Connexion
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'admin'
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    montant = Connexion.get_sum()
+    return render_template('index.html', montant=montant)
 
 @app.route("/don", methods=('GET', 'POST'))
 def don():
